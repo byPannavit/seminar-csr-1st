@@ -495,7 +495,6 @@
           <div>
             <div class="detail-label">สถานที่</div>
             <div class="detail-value">โรงแรมไอซาน่า โคราช · ห้องโฮมฮัก 2</div>
-            <a href="https://maps.app.goo.gl/yU1tKzB12MvqxrP1A" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:6px;font-size:12px;color:var(--gold-light);text-decoration:none;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:4px;padding:3px 10px;">📍 ดูแผนที่ Google Maps</a>
           </div>
         </div>
       </div>
@@ -546,30 +545,10 @@
             <select class="form-select" id="position">
               <option value="">-- เลือกตำแหน่ง --</option>
               <option>เจ้าของกิจการ / ผู้ประกอบการ</option>
-              <option>ผู้บริหาร / CFO</option>
               <option>นักบัญชี / ผู้ตรวจสอบ</option>
               <option>พนักงานบัญชี / การเงิน</option>
               <option>อื่นๆ</option>
             </select>
-          </div>
-
-          <div class="consent-block">
-            <input type="checkbox" id="consent" required>
-            <label for="consent">
-              ฉันยินยอมให้ Sure Consult by ปัณณวิชญ์ เก็บรวบรวมข้อมูลส่วนบุคคลเพื่อใช้ในการยืนยันการลงทะเบียนและส่งข้อมูลที่เกี่ยวข้องกับงาน
-            </label>
-          </div>
-          <div class="field-error" id="err-consent" style="margin-bottom:12px;">กรุณายืนยันการยินยอม</div>
-
-          <button type="submit" class="btn-submit" id="submitBtn">
-            ✅ ยืนยันสำรองที่นั่ง (ฟรี)
-          </button>
-
-          <div class="form-contact">
-            สอบถามเพิ่มเติม:<br>
-            <a href="tel:0818774385">081-877-4385</a> (คุณกบ) ·
-            <a href="tel:0828546376">082-854-6376</a> (สนง.)<br>
-            LINE: <a href="https://line.me/ti/p/~bypannavit" target="_blank">bypannavit</a>
           </div>
         </form>
       </div>
@@ -598,14 +577,6 @@
   </div>
 </div>
 
-<!-- CONTACT STRIP -->
-<div class="contact-strip">
-  <div class="contact-item"><span>📞</span> 081-877-4385 (คุณกบ)</div>
-  <div class="contact-item"><span>📞</span> 082-854-6376 (สำนักงาน)</div>
-  <div class="contact-item"><span>✉️</span> bypannavit.official@gmail.com</div>
-  <div class="contact-item"><span>💬</span> LINE: bypannavit</div>
-</div>
-
 <!-- COUNTDOWN -->
 <div class="countdown-section">
   <div class="countdown-label">⏳ นับถอยหลังสู่งานสัมมนา</div>
@@ -627,6 +598,29 @@
       <div class="countdown-unit">วินาที</div>
     </div>
   </div>
+</div>
+
+<!-- CONSENT + SUBMIT -->
+<div style="max-width:640px; margin:0 auto; padding:0 24px 40px;">
+  <div class="consent-block">
+    <input type="checkbox" id="consent" form="regForm" required>
+    <label for="consent">
+      ฉันยินยอมให้ Sure Consult by ปัณณวิชญ์ เก็บรวบรวมข้อมูลส่วนบุคคลเพื่อใช้ในการยืนยันการลงทะเบียนและส่งข้อมูลที่เกี่ยวข้องกับงาน
+    </label>
+  </div>
+  <div class="field-error" id="err-consent" style="margin-bottom:12px;">กรุณายืนยันการยินยอม</div>
+
+  <button type="submit" form="regForm" class="btn-submit" id="submitBtn">
+    ✅ ยืนยันสำรองที่นั่ง (ฟรี)
+  </button>
+</div>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-item"><span>📞</span> 081-877-4385 (คุณกบ)</div>
+  <div class="contact-item"><span>📞</span> 082-854-6376 (สำนักงาน)</div>
+  <div class="contact-item"><span>✉️</span> bypannavit.official@gmail.com</div>
+  <div class="contact-item"><span>💬</span> LINE: bypannavit</div>
 </div>
 
 <!-- SUCCESS MODAL -->
@@ -729,7 +723,7 @@ form.addEventListener('submit', async function(e) {
   // ── GOOGLE SHEETS ──
   // นำ URL ของ Web App ที่ได้จากการ Deploy Google Apps Script มาใส่แทนที่นี่
   // ตัวอย่าง: 'https://script.google.com/macros/s/AKfycb.../exec'
-  const SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbw8pdLlqX-dlQZS4u7NkWRh__zaxiCdoONi0Gd7iQ5hxfaBI6NpthWUMF53og6TzPpB/exec';
+  const SHEET_WEBHOOK = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
 
   try {
     if (SHEET_WEBHOOK !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
